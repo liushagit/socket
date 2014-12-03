@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.yghxj</groupId>
     <artifactId>socket</artifactId>
-    <version>${project.release.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>transport</artifactId>
   <name>transport</name>
