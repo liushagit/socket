@@ -10,8 +10,9 @@ public class ClientServer {
 
 	
 	public static void main(String[] args) {
-		final Client[] c = new Client[10];
-		for (int i = 0; i < 100; i++) {
+		int leng = 400;
+		final Client[] c = new Client[leng];
+		for (int i = 0; i < leng; i++) {
 			try {
 				Client client = new Client();
 				c[i] = client;
