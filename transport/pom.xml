@@ -11,6 +11,33 @@
   <artifactId>transport</artifactId>
   <name>transport</name>
   <url>http://maven.apache.org</url>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.ygxhj.transport.server.SocketServerBootStar</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>  
+			    <artifactId>maven-antrun-plugin</artifactId>  
+			</plugin>
+		    <plugin>  
+		        <artifactId>maven-clean-plugin</artifactId>  
+		        <configuration>  
+		            <verbose>true</verbose>  
+		        </configuration>  
+		    </plugin>  
+		</plugins>
+	</build>
+	
   <dependencies>
   <dependency>
 		<groupId>com.yghxj</groupId>
