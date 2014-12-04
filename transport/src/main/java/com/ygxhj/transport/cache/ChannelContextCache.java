@@ -29,4 +29,14 @@ public class ChannelContextCache {
 		return context.size();
 	}
 	
+	volatile long last = System.currentTimeMillis();
+
+	public int getTime(){
+		return (int)(System.currentTimeMillis() - last);
+	}
+	
+	public void resetTime(){
+		last = System.currentTimeMillis();
+	}
+	
 }
