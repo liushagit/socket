@@ -12,6 +12,7 @@ import io.netty.channel.ChannelHandlerContext;
 public class DefaulteHandler extends ChannelHandlerAdapter {
 
 	Logger logger = Logger.getLogger(DefaulteHandler.class);
+	long last = System.currentTimeMillis();
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 			throws Exception {
@@ -23,7 +24,10 @@ public class DefaulteHandler extends ChannelHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
 		ctx.writeAndFlush(MessageService.getMsg("response".getBytes()));
-		logger.info("handelSize = " + ChannelContextCache.getInstance().size());
+		if(System.currentTimeMillis() - last > 1000){
+			last = System.currentTimeMillis();
+			logger.info("handelSize = " + ChannelContextCache.getInstance().size());
+		}
 		
 	}
 
