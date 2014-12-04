@@ -19,7 +19,10 @@ public class DefaulteClientHandler extends ChannelHandlerAdapter{
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
-		logger.info("proxy Time=========" + ClientCache.getInstance().getTime(ctx.channel()));
+		int time = ClientCache.getInstance().getTime(ctx.channel());
+		if(time > 10){
+			logger.info("proxy Time=========" + ClientCache.getInstance().getTime(ctx.channel()));
+		}
 		
 		
 	}
